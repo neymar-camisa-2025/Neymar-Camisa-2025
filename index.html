@@ -171,18 +171,35 @@
         <!-- Mensagem de erro -->
         <div id="error-message" class="error-message">Resposta incorreta! Por favor, tente novamente.</div>
 
-        <!-- Botão final -->
-        <a href="https://pagamentosegury.online/checkout/cm6iaeoue005tfsdv7v7918uz?offer=B5EEHZH"
-        id="final-btn" 
-        class="btn" 
-        style="display: none;"
-        onclick="ttq.track('CompleteQuiz');">
-        FINALIZAR QUIZ
-     </a>
-     
-    </div>
+        <!-- Botão Final -->
+<a href="https://pagamentosegury.online/checkout/cm6iaeoue005tfsdv7v7918uz?offer=B5EEHZH"
+id="final-btn"
+class="btn"
+style="display: none;">
+FINALIZAR QUIZ
+</a>
 
-    <!-- Script JS -->
+<!-- Script JS -->
+<script>
+document.getElementById('final-btn').addEventListener('click', function(event) {
+ event.preventDefault(); // Impede o redirecionamento imediato
+
+ const checkoutURL = event.target.href; // Obtém a URL do botão
+
+ if (typeof ttq !== 'undefined') {
+     ttq.track('CompleteQuiz'); // Dispara o evento do TikTok
+
+     setTimeout(() => {
+         window.location.href = checkoutURL; // Redireciona para o checkout após 500ms
+     }, 500);
+ } else {
+     window.location.href = checkoutURL; // Se o Pixel não estiver carregado, redireciona imediatamente
+ }
+});
+</script>
+
+        
+    
     <script>
      const questions = [
     {
@@ -293,15 +310,7 @@
         });
     </script>
    
-   <script>
-    document.getElementById('final-btn').addEventListener('click', function() {
-        if (typeof ttq !== 'undefined') {
-            ttq.track('CompleteQuiz');
-        }
-    });
-    </script>
-    
-   
+
 </body>
 
 
