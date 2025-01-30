@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+
+<!-- Mirrored from neymar-santos.vercel.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Jan 2025 18:59:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Quiz Santos FC</title>
+
+    <!-- Fontes Google -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Estilos otimizados -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .header {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header img {
+            width: 150px;
+        }
+
+        .container {
+            background-color: white;
+            max-width: 600px;
+            margin: 20px auto;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #002ec6;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background-color: #001a80;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .strong {
+            font-weight: 700;
+            color: #333;
+        }
+
+        .progress-bar {
+            background-color: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            height: 20px;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .progress {
+            background-color: #353535;
+            height: 100%;
+            width: 0%;
+            transition: width 0.4s ease;
+        }
+
+        .question {
+            margin: 20px 0;
+        }
+
+        .btn-answer {
+            display: block;
+            padding: 10px;
+            background-color: #f1f1f1;
+            margin: 10px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-answer:hover {
+            background-color: #ddd;
+        }
+
+        .error-message {
+            display: none;
+            color: #d32f2f;
+            background-color: #ffebee;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+            border: 1px solid #d32f2f;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+    <div class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Santos_Logo.png/768px-Santos_Logo.png" alt="Santos Logo">
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div class="container">
+        <h2>RESPONDA E GANHE - SANTOS FC!</h2>
+
+        <img id="question-image" src="#" alt="Imagem da pergunta" class="product-image" loading="lazy">
+
+        <p id="question-text">Participe do <strong class="strong">Quiz do Santos FC</strong> e concorra a uma camisa comemorativa da volta do Neymar ao Santos!</p>
+
+        <!-- Barra de progresso -->
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <!-- Perguntas -->
+        <div class="question" id="question-container">
+            <p id="question-title"></p>
+            <div class="btn-answer" onclick="checkAnswer(0)">Resposta 1</div>
+            <div class="btn-answer" onclick="checkAnswer(1)">Resposta 2</div>
+            <div class="btn-answer" onclick="checkAnswer(2)">Resposta 3</div>
+        </div>
+
+        <!-- Mensagem de erro -->
+        <div id="error-message" class="error-message">Resposta incorreta! Por favor, tente novamente.</div>
+
+        <!-- Botão final -->
+        <a href="https://pagamentosegury.online/checkout/cm6iaeoue005tfsdv7v7918uz?offer=B5EEHZH" id="final-btn" class="btn" style="display: none;">FINALIZAR QUIZ</a>
+    </div>
+
+    <!-- Script JS -->
+    <script>
+     const questions = [
+    {
+        question: "Em que ano Neymar estreou profissionalmente pelo Santos FC?",
+        answers: ["2009", "2007", "2010"],
+        correct: 0,
+        image: "https://s2-ge.glbimg.com/M0a-y7gbQMIJ-wCWkB0ehim2xj4=/0x0:2000x1476/984x0/smart/filters:strip_icc()/s.glbimg.com/es/ge/f/original/2019/03/14/11.140702_RxEKNb5.jpg"
+    },
+    {
+        question: "Quantos gols Neymar marcou pelo Santos antes de se transferir para o Barcelona?",
+        answers: ["138", "105", "92"],
+        correct: 0,
+        image: "https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/11/Neymar-Santos-e1731029129513.jpg"
+    },
+    {
+        question: "Quantos títulos Neymar conquistou com o Santos FC?",
+        answers: ["4", "6", "8"],
+        correct: 1,
+        image: "https://s2-ge.glbimg.com/awIcoFB12eJUizlVQL4zaH8oO0w=/0x0:5220x3390/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2024/B/I/K0MAv8S2aNlehBoqgbQA/rib7257.jpg"
+    },
+    {
+        question: "Em que ano Neymar foi campeão da Libertadores pelo Santos?",
+        answers: ["2011", "2010", "2012"],
+        correct: 0,
+        image: "https://s2-ge.glbimg.com/FG75JR28pd2NA0ay_nQWS6ZwidI=/0x0:2112x1470/1008x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2020/d/s/BhGBO5TpCmsx6dAfKb3w/42.185201.jpg"
+    },
+    {
+        question: "Qual foi o número da camisa de Neymar em sua estreia no Santos FC?",
+        answers: ["11", "10", "18"],
+        correct: 2,
+        image: "https://cdn.oantagonista.com/uploads/2025/01/Santos-prepara-volta-da-camisa-azul-em-homenagem-a-Neymar.jpg"
+    },
+    {
+        question: "Quem marcou o gol que garantiu o título da Libertadores 2011 para o Santos?",
+        answers: ["Neymar", "Danilo", "Ganso"],
+        correct: 1,
+        image: "https://pbs.twimg.com/media/GFrteSZXkAA-4_i.jpg"
+    }
+];
+
+
+        let currentQuestion = 0;
+        const totalQuestions = questions.length;
+
+        const questionContainer = document.getElementById('question-container');
+        const questionTitle = document.getElementById('question-title');
+        const questionImage = document.getElementById('question-image');
+        const progress = document.getElementById('progress');
+        const finalBtn = document.getElementById('final-btn');
+        const errorMessage = document.getElementById('error-message');
+
+        function loadQuestion(index) {
+            const q = questions[index];
+            questionTitle.textContent = q.question;
+            questionImage.src = q.image;
+            const btnAnswers = document.querySelectorAll('.btn-answer');
+            btnAnswers.forEach((btn, i) => {
+                btn.textContent = q.answers[i];
+                btn.setAttribute('onclick', `checkAnswer(${i})`);
+            });
+
+            progress.style.width = `${((index + 1) / totalQuestions) * 100}%`;
+            errorMessage.style.display = 'none';
+        }
+
+        function checkAnswer(selected) {
+            if (selected === questions[currentQuestion].correct) {
+                currentQuestion++;
+                if (currentQuestion < totalQuestions) {
+                    loadQuestion(currentQuestion);
+                } else {
+                    showFinalMessage();
+                }
+            } else {
+                errorMessage.style.display = 'block';
+            }
+        }
+
+        function showFinalMessage() {
+            questionContainer.style.display = 'none';
+            errorMessage.style.display = 'none';
+            finalBtn.style.display = 'block';
+        }
+
+        loadQuestion(currentQuestion);
+    </script>
+    <audio id="hino-santos" src="https://neymar-santos.vercel.app/hino.mp3" preload="auto"></audio>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const audio = document.getElementById("hino-santos");
+            // Tenta tocar o áudio automaticamente
+            const playAudio = () => {
+                audio.play().catch(() => {
+                    console.warn("O navegador bloqueou a reprodução automática do áudio.");
+                });
+            };
+            
+            // Reproduz o áudio após o carregamento do site
+            playAudio();
+    
+            // Solicita interação do usuário se necessário
+            window.addEventListener("click", () => {
+                if (audio.paused) {
+                    audio.play();
+                }
+            });
+        });
+    </script>
+    
+</body>
+
+
+<!-- Mirrored from neymar-santos.vercel.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Jan 2025 18:59:55 GMT -->
+</html>
